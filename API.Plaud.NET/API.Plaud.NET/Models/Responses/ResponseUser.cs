@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 
-namespace API.Plaud.NET.Models.Requests
+namespace API.Plaud.NET.Models.Responses
 {
-    public class RequestUser
+    public class ResponseUser
     {
         [JsonProperty("status")]
         public int Status { get; set; }

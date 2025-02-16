@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace API.Plaud.NET.Models.Requests
+namespace API.Plaud.NET.Models.Responses
 {
-    public class RequestStatus
+    public class ResponseStatus
     {
         [JsonProperty("status")]
         public int Status { get; set; }
