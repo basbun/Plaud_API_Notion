@@ -19,7 +19,7 @@ namespace API.Plaud.NET.Interfaces
         /// </summary>
         /// <param name="username">The username of the user to authenticate.</param>
         /// <param name="password">The password of the user to authenticate.</param>
-        /// <returns>A task representing the asynchronous operation, with a response containing authentication details.</returns>
+        /// <returns>A task representing the asynchronous operation, with a response containing authentication details.  <see cref="AccessToken"/> will be set if the request is successful.</returns>
         Task<ResponseAuth> AuthenticateAsync(string username, string password);
 
         /// <summary>

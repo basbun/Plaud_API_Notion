@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using API.Plaud.NET.Constants;
 using API.Plaud.NET.Models.Responses;
 using Newtonsoft.Json;
 
@@ -28,7 +29,7 @@ namespace API.Plaud.NET.DataAccess
         internal PlaudApi()
         {
             _httpClient = new HttpClient();
-            _httpClient.BaseAddress = new Uri("https://api.plaud.ai");
+            _httpClient.BaseAddress = new Uri(Endpoints.BaseUrl);
         }
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace API.Plaud.NET.DataAccess
 
                 using (FormUrlEncodedContent content = new FormUrlEncodedContent(formData))
                 {
-                    using (HttpResponseMessage response = await _httpClient.PostAsync("/auth/access-token", content))
+                    using (HttpResponseMessage response = await _httpClient.PostAsync(Endpoints.Authentication, content))
                     {
                         response.EnsureSuccessStatusCode();
                         string responseContent = await response.Content.ReadAsStringAsync();

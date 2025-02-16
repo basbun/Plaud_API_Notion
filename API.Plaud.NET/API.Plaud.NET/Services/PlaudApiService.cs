@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using API.Plaud.NET.Constants;
+using API.Plaud.NET.DataAccess;
 using API.Plaud.NET.Interfaces;
 using API.Plaud.NET.Models.Requests;
 using API.Plaud.NET.Models.Responses;
@@ -11,17 +14,43 @@ namespace API.Plaud.NET.Services
     {
         /// <inheritdoc />
         public string AccessToken { get; set; }
+
+        /// <summary>
+        /// Instance of the PlaudApi class used for handling direct API interactions.
+        /// Responsible for communicating with the Plaud backend, including authentication and data retrieval processes.
+        /// </summary>
+        private readonly PlaudApi _plaudApi;
+
+        /// <summary>
+        /// Provides an implementation of the IPlaudApiService interface for interacting with the Plaud API.
+        /// Handles authentication, data retrieval, and management of recordings using the PlaudApi class.
+        /// </summary>
+        public PlaudApiService()
+        {
+            _plaudApi = new PlaudApi();
+        }
         
         /// <inheritdoc />
         public async Task<ResponseAuth> AuthenticateAsync(string username, string password)
         {
-            throw new System.NotImplementedException();
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                throw new Exception("Username or password cannot be empty.");
+            }
+            
+            ResponseAuth authResponse = await _plaudApi.AuthWithApiAsync(username, password);
+            if (string.IsNullOrEmpty(authResponse.AccessToken))
+            {
+                throw new Exception("Authentication failed.");
+            }
+            AccessToken = authResponse.AccessToken;
+            return authResponse;
         }
         
         /// <inheritdoc />
         public async Task<ResponseUser> GetMyUserAsync()
         {
-            throw new System.NotImplementedException();
+            return await _plaudApi.GetDataAsync<ResponseUser>(Endpoints.GetMyUser, AccessToken);
         }
 
         /// <inheritdoc />
