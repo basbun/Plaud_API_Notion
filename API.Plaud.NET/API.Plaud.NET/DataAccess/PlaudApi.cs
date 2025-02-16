@@ -28,6 +28,7 @@ namespace API.Plaud.NET.DataAccess
         /// </summary>
         internal PlaudApi()
         {
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
             _httpClient = new HttpClient();
             _httpClient.BaseAddress = new Uri(Endpoints.BaseUrl);
         }

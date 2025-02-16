@@ -8,12 +8,12 @@
         /// ensuring consistent communication with the API.
         /// Changes to this value generally occur only if the API's host or domain is updated.
         /// </summary>
-        internal const string BaseUrl = "https://api.plaud.io";
+        internal const string BaseUrl = "https://api.plaud.ai";
 
         /// <summary>
         /// 
         /// </summary>
-        internal const string Authentication = "/auth/access-token/";
+        internal const string Authentication = "/auth/access-token";
 
         /// <summary>
         /// Represents the default query parameters applied when listing records

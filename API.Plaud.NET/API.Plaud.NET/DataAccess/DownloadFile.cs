@@ -22,6 +22,8 @@ namespace API.Plaud.NET.DataAccess
         /// <exception cref="Exception">Thrown when there is an error downloading the file or the HTTP response is unsuccessful.</exception>
         internal static async Task<string> DownloadFileAsBase64Async(string fileUrl)
         {
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+
             try
             {
                 using (HttpResponseMessage response = await _httpClient.GetAsync(fileUrl))
