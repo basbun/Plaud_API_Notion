@@ -87,7 +87,7 @@ namespace API.Plaud.NET.Models
         public string OriLocation { get; set; }
 
         [JsonProperty("trans_result")]
-        public List<TransResult> TransResult { get; set; }
+        public List<TransContent> TransResult { get; set; }
 
         [JsonProperty("ai_content")]
         public string AiContent { get; set; }

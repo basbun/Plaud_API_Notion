@@ -76,7 +76,10 @@ namespace API.Plaud.NET.Interfaces
         /// Downloads an audio file for the specified recording asynchronously.
         /// </summary>
         /// <param name="recordingId">The unique identifier of the recording to download.</param>
-        /// <returns>A task representing the asynchronous operation, with a string containing the path or content of the downloaded audio file.</returns>
+        /// <returns>A task representing the asynchronous operation, with a string containing the content of the downloaded audio file.</returns>
+        /// <remarks>
+        /// Base64 string will be returned and audio files are .mp3 format.
+        /// </remarks>
         Task<string> DownloadAudioFileAsync(string recordingId);
 
         /// <summary>

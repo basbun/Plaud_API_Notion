@@ -31,7 +31,7 @@
         /// <remarks>
         /// Need to append the id of the file to create the link for to the end of the URL
         /// </remarks>
-        public const string ShareableLink = "/file/share-url/";
+        internal const string ShareableLink = "/file/share-url/";
 
         /// <summary>
         /// Represents the endpoint path used to interact with file tag
@@ -39,7 +39,7 @@
         /// operations such as retrieving, creating, or managing tags
         /// associated with files.
         /// </summary>
-        public const string FileTags = "/filetag/";
+        internal const string FileTags = "/filetag/";
 
         /// <summary>
         /// Represents the API endpoint used to retrieve a list of recordings in a simplified web format.
@@ -49,7 +49,7 @@
         /// <remarks>
         /// Query string parameters get appended to the end of the url to apply filtering
         /// </remarks>
-        public const string ListRecordings = "/file/simple/web";
+        internal const string ListRecordings = "/file/simple/web";
 
         /// <summary>
         /// Represents the endpoint used to retrieve specific recordings
@@ -57,14 +57,14 @@
         /// Allows for targeted fetching of recordings through ID-based queries,
         /// supporting precise and efficient data retrieval operations.
         /// </summary>
-        public const string GetRecordingsById = "/file/list/";
+        internal const string GetRecordingsById = "/file/list/";
 
         /// <summary>
         /// Represents the endpoint used to retrieve information pertaining to uploads,
         /// including configuration details and metadata, within the Plaud API. This endpoint
         /// supports the management and handling of file upload processes.
         /// </summary>
-        public const string UploadInfo = "/others/upload-info/";
+        internal const string UploadInfo = "/others/upload-info/";
 
         /// <summary>
         /// Represents the endpoint for retrieving a temporary URL for accessing an audio file.
@@ -73,14 +73,14 @@
         /// <remarks>
         /// Need to append the id of the file to create the link for to the end of the URL
         /// </remarks>
-        public const string GetAudioFileTempUrl = "/file/temp-url/";
+        internal const string GetAudioFileTempUrl = "/file/temp-url/";
 
         /// <summary>
         /// Represents the API endpoint for exporting a document.
         /// This endpoint is specifically used to facilitate the process of
         /// exporting document-related data to an external format or location.
         /// </summary>
-        public const string ExportDocument = "/file/document/export/";
+        internal const string ExportDocument = "/file/document/export/";
 
         /// <summary>
         /// Represents the API endpoint path for retrieving authenticated user information.
@@ -88,13 +88,13 @@
         /// from the Plaud API. It provides access to user-specific data such as profile information
         /// and account settings.
         /// </summary>
-        public const string GetMyUser = "/user/me/";
+        internal const string GetMyUser = "/user/me/";
 
         /// <summary>
         /// Represents the endpoint for retrieving the AI system's operational status.
         /// Used to query the current state or availability of AI-related processes
         /// within the Plaud API framework.
         /// </summary>
-        public const string GetStatus = "/ai/status/";
+        internal const string GetStatus = "/ai/status/";
     }
 }
