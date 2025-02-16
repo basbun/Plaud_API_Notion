@@ -2,6 +2,15 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Version>2025.02.16.01</Version>
+        <Title>Plaud API .NET Standard 2.0 Library</Title>
+        <Authors>James Studer</Authors>
+        <Description>This is an UNOFFICIAL .NET Standard 2.0 Library for the PLAUD API. This is NOT supported by the PLAUD team and was created by me to use in other projects I have to fill gaps that the platform doesn't support yet.</Description>
+        <PackageProjectUrl>https://github.com/JamesStuder/Plaud_API</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/JamesStuder/Plaud_API</RepositoryUrl>
+        <RepositoryType>Github</RepositoryType>
+        <PackageTags>Plaud</PackageTags>
     </PropertyGroup>
 
     <ItemGroup>
@@ -9,9 +18,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="..\..\README.md">
+      <Content Include="..\README.md">
         <Link>README.md</Link>
       </Content>
     </ItemGroup>
-
+    
 </Project>
