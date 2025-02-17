@@ -80,7 +80,7 @@ namespace API.Plaud.NET.Services
             {
                 throw new Exception("Recording IDs cannot be empty.");
             }
-            return await _plaudApi.PostDataAsync<ResponseListRecordings>(Endpoints.ListRecordings, recordingIds, AccessToken);
+            return await _plaudApi.PostDataAsync<ResponseListRecordings>(Endpoints.GetRecordingsById, recordingIds, AccessToken);
         }
 
         /// <inheritdoc />
@@ -102,7 +102,7 @@ namespace API.Plaud.NET.Services
                 throw new Exception("Permissions cannot be empty.");
             }
             
-            return await _plaudApi.GetDataAsync<ResponseShareableLink>($"{Endpoints.ShareableLink}{recordingId}", AccessToken);
+            return await _plaudApi.PostDataAsync<ResponseShareableLink>($"{Endpoints.ShareableLink}{recordingId}", permissions, AccessToken);
         }
 
         /// <inheritdoc />
@@ -132,7 +132,7 @@ namespace API.Plaud.NET.Services
             {
                 throw new Exception("Upload Info failed.");
             }
-            ResponseAudioTempUrl responseAudioTempUrl = await _plaudApi.GetDataAsync<ResponseAudioTempUrl>(Endpoints.GetAudioFileTempUrl, AccessToken);
+            ResponseAudioTempUrl responseAudioTempUrl = await _plaudApi.GetDataAsync<ResponseAudioTempUrl>($"{Endpoints.GetAudioFileTempUrl}{recordingId}", AccessToken);
             if (string.IsNullOrEmpty(responseAudioTempUrl.TempUrl))
             {
                 throw new Exception("No download url found.");

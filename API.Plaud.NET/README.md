@@ -37,3 +37,7 @@ This is an UNOFFICIAL .NET Standard 2.0 Library for the PLAUD API.  This is NOT 
   - Download the transcript file.  This will return the BASE64 string for you to convert.
 - **DownloadSummaryFileAsync**
   - Download the summary file.  This will return the BASE64 string for you to convert.
+
+# Notes:
+- Supported File Types:
+  - Use ```FileTypes``` static class which has all the supported file types you can pass.  Not all types are supported by all endpoints.  Check the Plaud UI to see what you can export for a transcript vs summary vs audio.  You also don't have to use these, you can pass just a string when a file type is needed.  These are provided to assist.

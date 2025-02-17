@@ -57,14 +57,14 @@
         /// Allows for targeted fetching of recordings through ID-based queries,
         /// supporting precise and efficient data retrieval operations.
         /// </summary>
-        internal const string GetRecordingsById = "/file/list/";
+        internal const string GetRecordingsById = "/file/list";
 
         /// <summary>
         /// Represents the endpoint used to retrieve information pertaining to uploads,
         /// including configuration details and metadata, within the Plaud API. This endpoint
         /// supports the management and handling of file upload processes.
         /// </summary>
-        internal const string UploadInfo = "/others/upload-info/";
+        internal const string UploadInfo = "/others/upload-info";
 
         /// <summary>
         /// Represents the endpoint for retrieving a temporary URL for accessing an audio file.
@@ -80,7 +80,7 @@
         /// This endpoint is specifically used to facilitate the process of
         /// exporting document-related data to an external format or location.
         /// </summary>
-        internal const string ExportDocument = "/file/document/export/";
+        internal const string ExportDocument = "/file/document/export";
 
         /// <summary>
         /// Represents the API endpoint path for retrieving authenticated user information.
@@ -88,13 +88,13 @@
         /// from the Plaud API. It provides access to user-specific data such as profile information
         /// and account settings.
         /// </summary>
-        internal const string GetMyUser = "/user/me/";
+        internal const string GetMyUser = "/user/me";
 
         /// <summary>
         /// Represents the endpoint for retrieving the AI system's operational status.
         /// Used to query the current state or availability of AI-related processes
         /// within the Plaud API framework.
         /// </summary>
-        internal const string GetStatus = "/ai/status/";
+        internal const string GetStatus = "/ai/status";
     }
 }

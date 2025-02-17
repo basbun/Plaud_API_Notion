@@ -85,7 +85,6 @@ namespace API.Plaud.NET.DataAccess
                 _httpClient.DefaultRequestHeaders.Clear();
                 _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
                 HttpResponseMessage response = await _httpClient.GetAsync(endpoint);
-                response.EnsureSuccessStatusCode();
                 string content = await response.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<T>(content);
             }
@@ -112,9 +111,7 @@ namespace API.Plaud.NET.DataAccess
                 _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
                 string jsonData = JsonConvert.SerializeObject(dataToPost);
                 StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-
                 HttpResponseMessage response = await _httpClient.PostAsync(endpoint, content);
-                response.EnsureSuccessStatusCode();
                 string responseContent = await response.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<T>(responseContent);
             }

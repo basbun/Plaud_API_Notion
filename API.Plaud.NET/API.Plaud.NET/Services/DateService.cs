@@ -6,7 +6,7 @@ namespace API.Plaud.NET.Services
     {
         internal static string ConvertTimeStampToFormattedDateTime(long timestampToConvert)
         {
-            DateTimeOffset timestamp = DateTimeOffset.FromUnixTimeSeconds(timestampToConvert);
+            DateTimeOffset timestamp = DateTimeOffset.FromUnixTimeMilliseconds(timestampToConvert);
             return timestamp.ToString("yyyy-MM-dd HH:mm:ss");
         }
     }
